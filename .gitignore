@@ -105,3 +105,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# static files
+*.zip
+*.jpg
+*.tgz
+*.gz
