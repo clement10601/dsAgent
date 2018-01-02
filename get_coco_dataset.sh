@@ -20,9 +20,9 @@ pip install -r requirements.txt
 cd PythonAPI
 make && make install
 
-echo "====================================="
-echo "Download and extract images from COCO"
-echo "====================================="
+echo "=================================="
+echo "Download image zip files from COCO"
+echo "=================================="
 cd ../..
 mkdir images
 mkdir downloads
@@ -31,6 +31,9 @@ cd downloads
 wget -c http://images.cocodataset.org/zips/train2017.zip
 wget -c http://images.cocodataset.org/zips/val2017.zip
 wget -c http://images.cocodataset.org/zips/test2017.zip
+echo "===================="
+echo "Extracting zip files"
+echo "===================="
 # Unzip
 unzip -q train2017.zip
 unzip -q val2017.zip
@@ -66,11 +69,14 @@ find images/val2017/ -exec readlink -f {} \; >  exports/val2017.txt
 find images/test2017/ -exec readlink -f {} \; >  exports/test2017.txt
 # Download COCO Metadata
 cd downloads
-echo "=============================="
-echo "Download and unzip annotations"
-echo "=============================="
+echo "===================="
+echo "Downloading Annotations"
+echo "===================="
 wget -c http://images.cocodataset.org/annotations/annotations_trainval2017.zip
 wget -c http://images.cocodataset.org/annotations/stuff_annotations_trainval2017.zip
+echo "======================"
+echo "Extracting Annotations"
+echo "======================"
 unzip -q annotations_trainval2017.zip
 unzip -q stuff_annotations_trainval2017.zip
 
