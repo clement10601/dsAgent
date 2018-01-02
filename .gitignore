@@ -23,6 +23,7 @@ images/
 annotations/
 cocoapi/
 exports/
+labels/
 sdist/
 var/
 cocoapi/
