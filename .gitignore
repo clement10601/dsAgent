@@ -18,6 +18,10 @@ eggs/
 lib/
 lib64/
 parts/
+image/
+images/
+cocoapi/
+exports/
 sdist/
 var/
 cocoapi/

@@ -1,15 +1,20 @@
 #!/bin/bash
 pip install -r requirements.txt
+p=`which virtualenvwrapper.sh`
+echo "$p"
 grep -q -F 'export WORKON_HOME=~/.virtualenvs' ~/.bashrc || echo 'export WORKON_HOME=~/.virtualenvs' >> ~/.bashrc
-grep -q -F 'source /usr/bin/virtualenvwrapper.sh' ~/.bashrc || echo 'source /usr/bin/virtualenvwrapper.sh' >> ~/.bashrc
+grep -q -F 'source $p' ~/.bashrc || echo 'source /usr/bin/virtualenvwrapper.sh' >> ~/.bashrc
 source ~/.bashrc
+source `which virtualenvwrapper.sh`
 mkvirtualenv datasetAgent
+which python
 
 # Clone COCO API
-git https://github.com/clement10601/cocoapi.git
+git clone https://github.com/clement10601/cocoapi.git
 cd cocoapi
+which pip
 pip install -r requirements.txt
-cd cocoapi/Python
+cd PythonAPI
 make && make install
 cd ../..
 mkdir images
