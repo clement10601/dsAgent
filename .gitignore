@@ -20,6 +20,7 @@ lib64/
 parts/
 sdist/
 var/
+cocoapi/
 wheels/
 *.egg-info/
 .installed.cfg
